@@ -18,7 +18,6 @@ emailInput.addEventListener("blur", function() {
 });
 
 emailInput.addEventListener("input", function() {
-    console.log(emailInput.value);
     if(emailInput.value!=""){
         email.style.borderColor="black"
         email.style.backgroundColor="white"
