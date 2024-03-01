@@ -35,13 +35,14 @@
 </head>
 
 <body>
-  <main class="bg-slate h-screen w-screen flex justify-center items-center">
-
-    <div class="bg-white border p-5 rounded-lg flex gap-5">
-      <div class="flex flex-col gap-8 p-5 justify-center items-start w-1/2">
+  <main class="md:bg-slate md:h-screen w-full flex justify-center md:items-center flex-col gap-5">
+    <div
+      class="bg-white md:border md:p-5 rounded-lg flex  flex-wrap-reverse md:flex-nowrap md:flex-row md:items-center md:justify-between md:gap-5">
+      <div
+        class="w-full md:flex p-5 flex flex-col gap-4 md:flex-col md:gap-8 md:p-5 md:justify-center md:items-start md:w-1/2">
         <h1 class="font-bold text-5xl text-charcoal flex w-full">Stay updated!</h1>
-        <p class="text-base">Join 60,000+ product managers receiving monthly updates on:</p>
-        <ul class="flex flex-wrap gap-2 flex-col list-none">
+        <p class="md:text-base md:pt-2 font-medium">Join 60,000+ product managers receiving monthly updates on:</p>
+        <ul class="flex flex-wrap md:gap-2 gap-6 flex-col list-none pt-2">
           <li class="flex items-start">
             <img src="/assets/images/icon-success.svg" alt="icon" class="mr-3 w-6" /> Product discovery and building
             what matters
@@ -55,8 +56,7 @@
           </li>
         </ul>
 
-
-        <form method="post" class="flex flex-col gap-2 w-full">
+        <form method="post" class="flex flex-col md:gap-2 gap-4 w-full md:mt-5">
           <p class="text-sm font-bold">Email address</p>
           <input id="email" type="text" placeholder="Your email address" class="w-full border text p-4 rounded-md mb-3"
             autocomplete="off" />
@@ -65,17 +65,20 @@
           </button>
         </form>
       </div>
-      <div class="w-1/2 flex items-center justify-end">
-        <img src="/assets/images/illustration-sign-up-desktop.svg" alt="" srcset="" class="rounded-lg" />
+      <div class="w-full md:w-1/2 md:flex md:items-center md:justify-end">
+        <img src="/assets/images/illustration-sign-up-desktop.svg" alt="" class="rounded-lg hidden md:block" />
+        <img src="/assets/images/illustration-sign-up-mobile.svg" alt=""
+          class="rounded-lg rounded-t-none md:hidden w-full" />
       </div>
+    </div>
+    <div class="hidden md:block md:text-center md:font-medium md:text-white">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://ace7260.github.io" class="text-clifford">Irakoze Eddy Nobel</a>.
     </div>
   </main>
 
 
-  <div class="hidden">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Irakoze Eddy Nobel</a>.
-  </div>
+
 </body>
 
 </html>
