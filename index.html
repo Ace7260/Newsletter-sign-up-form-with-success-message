@@ -7,6 +7,17 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Roboto-Bold';
+      src: url('/assets/fonts/Roboto-Bold.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Roboto-Regular';
+      src: url('/assets/fonts/Roboto-Regular.ttf') format('truetype');
+    }
+  </style>
   <script>
     tailwind.config = {
       theme: {
@@ -27,17 +38,21 @@
             'lg': '2rem',
             'full': '9999px',
             'large': '12px',
-          }
+          },
+          fontFamily: {
+            'Roboto-Regular': ['Roboto-Regular', 'sans'],
+            'bold': ['Roboto-Bold', 'sans'],
+          },
         }
       }
     }
   </script>
 </head>
 
-<body>
+<body class="font-Roboto-Regular">
   <main class="md:bg-slate md:h-screen w-full flex justify-center md:items-center flex-col gap-5">
-    <div
-      class="hidden bg-white md:border md:p-5 rounded-lg flex  flex-wrap-reverse md:flex-nowrap md:flex-row md:items-center md:justify-between md:gap-5">
+    <div id="main_content"
+      class="bg-white md:border md:p-5 rounded-lg flex  flex-wrap-reverse md:flex-nowrap md:flex-row md:items-center md:justify-between md:gap-5">
       <div
         class="w-full md:flex p-5 flex flex-col gap-4 md:flex-col md:gap-8 md:p-5 md:justify-center md:items-start md:w-1/2">
         <h1 class="font-bold text-5xl text-charcoal flex w-full">Stay updated!</h1>
@@ -56,14 +71,21 @@
           </li>
         </ul>
 
-        <form method="post" class="flex flex-col md:gap-2 gap-4 w-full md:mt-5">
-          <p class="text-sm font-bold">Email address</p>
-          <input id="email" type="text" placeholder="Your email address" class="w-full border text p-4 rounded-md mb-3"
-            autocomplete="off" />
-          <button class="bg-charcoal p-4 text-white font-bold rounded-md">
+        <form id="subscribeForm" method="post" class="flex flex-col md:gap-2 gap-4 w-full md:mt-5">
+          <div class="flex justify-between items-center">
+            <p class="text-sm font-bold">Email address</p>
+            <p id="emailError" class="text-red-500 text-sm font-bold hidden">Email required.</p>
+          </div>
+          <input id="email" type="email" placeholder="irano7260@gmail.com"
+            class="w-full border text p-4 rounded-md mb-3" autocomplete="off" required />
+          <button id="submitButton"
+            class="bg-charcoal p-4 text-white font-bold rounded-md transition-colors duration-1000 ease-in-out hover:bg-Tomato"
+            type="submit">
             Subscribe to monthly newsletter
           </button>
+
         </form>
+
       </div>
       <div class="w-full md:w-1/2 md:flex md:items-center md:justify-end">
         <img src="/assets/images/illustration-sign-up-desktop.svg" alt="" class="rounded-lg hidden md:block" />
@@ -71,21 +93,25 @@
           class="rounded-lg rounded-t-none md:hidden w-full" />
       </div>
     </div>
-    <div
-      class="h-screen justify-center items-between md:w-2/5 bg-white md:rounded-lg md:h-2/5 flex flex-col p-10 gap-5">
+    <div id="modal"
+      class="hidden h-screen justify-center items-between md:w-2/5 bg-white md:rounded-lg md:h-2/5 flex flex-col p-10 gap-5">
       <img src="/assets/images/icon-success.svg" alt="icon" class="mr-3 w-16 md:mt-0 mt-44" />
       <h1 class="text-4xl font-bold text-charcoal">Thanks for subscribing!</h1>
       <p class="text-md md:text-sm mb-auto md:mb-3 text-charcoal"> A confirmation email has been sent to <span
-          class="font-bold">ash@loremcompany.com.</span>
+          class="font-bold" id="email_"></span>
         Please open it and click the button inside to confirm your subscription.</p>
-      <button class="p-3 bg-charcoal active:bg-Tomato rounded-md text-white"> Dismiss message </button>
+      <button
+        class="p-3 bg-charcoal hover:bg-Tomato rounded-md text-white hover:shadow-2xl transition-colors duration-1000 ease-in-out"
+        id="close"> Dismiss
+        message
+      </button>
     </div>
-    <div class="hidden md:hidden md:text-center md:font-medium md:text-white">
+    <div class="text-center md:font-medium md:text-white pb-10">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
       Coded by <a href="https://ace7260.github.io" class="text-clifford">Irakoze Eddy Nobel</a>.
     </div>
   </main>
-
+  <script src="/srcipt.js"></script>
 </body>
 
 </html>
